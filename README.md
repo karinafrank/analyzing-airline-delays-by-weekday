@@ -13,9 +13,32 @@ Flight data from 2019 was collected from the [Bureau of Transportation Statistic
 
 ## Results for Comparing Arrival and Departure Delays
 
-Using a [Python file](), the data from the Bureau of Transportation Statistics was processed to produce a figure that allows for selection of particular airline data. 
+Using a [Python file](https://github.com/karinafrank/analyzing-airline-delays-by-weekday/blob/master/Project4_Python_Visualization%20(1).ipynb), the data from the Bureau of Transportation Statistics was processed to produce a figure that allows for selection of particular airline data. 
 
 1. The raw data file was downloaded from the [Bureau of Transportation Statistics](https://www.transtats.bts.gov/DL_SelectFields.asp), and the selected data sets to be included were: day of the week, the airline, the departure delay, and arrival delay. Year, original airport ID, and desitnation airport ID were also downloaded but were not used in this analysis. 
+2. A [Python file](https://github.com/karinafrank/analyzing-airline-delays-by-weekday/blob/master/Project4_Python_Visualization%20(1).ipynb) was created in google colaboratory.
+3. Packages to be used throughout analysis were imported, including pandas and plotly.express.
+4. The raw csv file was uploaded, read, and translated into a dataframe using
+```
+airline_data = "https://raw.githubusercontent.com/karinafrank/analyzing-airline-delays-by-weekday/master/Airline%20Delay%20Raw%20Data.csv"
+df_airline = pd.read_csv(airline_data)
+```
+5. The data for each individual flight arrival and departure delay was grouped by the day of the week, and was aggregated to only show the average delay for each airline on each day of the week.
+`df_airline_dep_delays = df_airline.groupby(["DAY_OF_WEEK", "MKT_UNIQUE_CARRIER"])["DEP_DELAY"].agg(["mean"]).reset_index()`
+  * This step was done separately for arrival delays and departure delays
+  * The two different aggregated means were combined into one dataframe by adding a column to the departure delays dataframe with arrival delay average time using `df_airline_dep_delays['ARR_DELAYS'] = df_airline_arr_delays['mean']`
+6. Using the melt function, the two columns of delay data (departure and arrival) are combined into one variable column, with arrival delays listed after departure delays. 
+  * This step is done so the two sets of y values may be simultaneously graphed using one variable
+```
+df_melt = df_airline_dep_delays.melt(id_vars=['DAY_OF_WEEK','MKT_UNIQUE_CARRIER'],value_vars=['mean','ARR_DELAYS'])
+```
+7. A line graph is then made using plotly.express. The graph shows the difference between the departure and arrival delays among all the airlines, and allows for selection of a particular airline to examine its particular trends throughout the week days.
+
+![alt text]()
+
+## How Travelers Should Book Their Flights
+
+
 
 
 
