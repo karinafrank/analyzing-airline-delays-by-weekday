@@ -38,9 +38,9 @@ df_melt = df_airline_dep_delays.melt(id_vars=['DAY_OF_WEEK','MKT_UNIQUE_CARRIER'
 
 ## How Travelers Should Book Their Flights
 
-According to the results of the above analysis, ...
+According to the results of the above analysis, it appears Sundays (1) and Wednesdays (4) experience more peaks in delays than the rest of the days of the week. Additionally, airlines B6 and UA tend to have the largest flight delays, while HA and WN have some of the lowest flight delays.
 
-However, it can be seen on the interactive plot most airports have larger departure delays than arrival delay times. This indicates that airlines do something to make the delay in departure not have as large an effect on overall flight plans, possibly by taking alternate routes, or simply the airline calculates in a longer expected flight time, adn therefore later expected arrival time, to allow for delays in departure. Therefore, if a flight is leaving much later than expected, passengers can at least rest assured that their delay at their arrival destination will not be as drastic as the one experienced waiting in the airport. 
+However, it can be seen on the interactive plot that most airports have larger departure delays than arrival delay times. This indicates that airlines do something to make the delay in departure not have as large an effect on overall flight plans, possibly by taking alternate routes, or simply the airline calculates in a longer expected flight time, adn therefore later expected arrival time, to allow for delays in departure. Therefore, if a flight is leaving much later than expected, passengers can at least rest assured that their delay at their arrival destination will not be as drastic as the one experienced waiting in the airport. 
 
 Given more time, it would be interesting to investigate how delay times correlated with airport origin and destination, as some locations like Chicago are known for having frequent flight delays and cancellations due to weather. 
 
