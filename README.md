@@ -34,7 +34,7 @@ df_melt = df_airline_dep_delays.melt(id_vars=['DAY_OF_WEEK','MKT_UNIQUE_CARRIER'
 ```
 7. A line graph is then made using plotly.express. The graph shows the difference between the departure and arrival delays among all the airlines, and allows for selection of a particular airline to examine its particular trends throughout the week days.
 
-![alt text]()
+![alt text](https://github.com/karinafrank/analyzing-airline-delays-by-weekday/blob/master/Plotly%20Visualization.png)
 
 ## How Travelers Should Book Their Flights
 
